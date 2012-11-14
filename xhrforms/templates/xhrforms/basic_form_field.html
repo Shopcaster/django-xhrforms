@@ -1,0 +1,26 @@
+
+{% if field.is_hidden %}
+  {{ field }}
+{% else %}
+  <div class="control-group{% if field.errors %} error{% endif %} {{ field.name}}-group">
+    <label for="id_{{ field.name }}" class="control-label">{{ field.label }}</label>
+    {% if field.field.widget.attrs.prepend %}
+      <div class="input-prepend">
+        <div class="add-on">{{ field.field.widget.attrs.prepend }}</div>{{ field }}
+      </div>
+    {% else %}
+      <div class="controls">
+        {{ field }}
+      </div>
+    {% endif %}
+    {% if field.errors %}
+      {% for error in field.errors %}
+        <span class="help-inline error alert alert-error">{{ error }}</span>
+      {% endfor %}
+    {% else %}
+      {% if field.help_text %}
+        <span class="help-inline">{{ field.help_text }}</span>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endif %}

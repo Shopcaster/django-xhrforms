@@ -1,0 +1,10 @@
+
+{% if basic_form.non_field_errors %}
+  <div class="alert alert-error">
+    {{ basic_form.non_field_errors.as_text }}
+  </div>
+{% endif %}
+
+{% for field in basic_form %}
+  {% include "xhrforms/basic_form_field.html" %}
+{% endfor %}

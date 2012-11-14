@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='django-xhrforms',
-    version='0.1.0',
+    version='0.1.1',
     author='Aron Jones',
     author_email='aron.jones@gmail.com',
     packages=['xhrforms'],

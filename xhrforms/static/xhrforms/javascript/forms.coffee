@@ -60,7 +60,12 @@ $ ->
         data.fields[$field.attr('name')] = $field.attr('value')
         data = JSON.stringify data
 
-        xhr = $.ajax type: method, url: url, data: data, dataType: 'text'
+        xhr = $.ajax
+          type: method,
+          url: url,
+          data: data,
+          dataType: 'text',
+          headers: {'X-CSRFToken': $form.find('[name=csrfmiddlewaretoken]').val()}
         xhr.always ->
           if xhr.status == 200
             $control = $field.closest('.control-group')

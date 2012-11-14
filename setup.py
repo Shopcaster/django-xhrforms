@@ -9,7 +9,7 @@ setup(
     url='https://github.com/Shopcaster/django-xhr-form',
     license='LICENSE.txt',
     description='Simple XHR form validation in Django.',
-    long_description=open('README.txt').read(),
+    long_description=open('README.md').read(),
     install_requires=[
         "Django >= 1.4.0",
     ],
